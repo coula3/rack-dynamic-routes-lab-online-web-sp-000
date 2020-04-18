@@ -9,12 +9,10 @@ class Application
       if item = @@items.detect {|item| item.name == item_name}
         resp.write "#{item.price}"
       else
-        # resp.status = 400
         resp.write "Item not found"
          resp.status = 400
       end
     else
-      # resp.status = 404
       resp.write "Route not found"
        resp.status = 404
     end
