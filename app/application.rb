@@ -4,9 +4,9 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/items/)
-      item_name == req.path.match(/items/)[-1]
+      item_name = req.path.match(/items/)[-1]
       if item = @@items.find {|item| item.name == item_name}
-        resp.write item.price
+        resp.write "#{item.price}"
       else
         resp.write = 400
         resp.write "Item not found"
